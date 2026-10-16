@@ -1,6 +1,5 @@
 {
   "0": "make_stickman.py",
-  "1": "CollapsingDeck",
   "2": "manifest.json",
   "3": "BuildScript.cs",
   "4": "StickmanMotor",
@@ -8,7 +7,7 @@
   "6": "DemoBootstrap",
   "7": "StickmanView",
   "8": "StyleData",
-  "9": "Mapa del código",
+  "9": "StickMan Arena",
   "10": "StickmanModelTests.cs",
   "11": "test-summary.py",
   "12": "context7",

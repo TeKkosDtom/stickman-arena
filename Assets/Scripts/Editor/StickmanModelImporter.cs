@@ -14,6 +14,9 @@ namespace StickmanArena.EditorTools
 
         bool IsStickman => assetPath.StartsWith(Folder) && assetPath.ToLowerInvariant().EndsWith(".fbx");
 
+        // Subir el número cuando cambie la lógica para que Unity reimporte el modelo
+        public override uint GetVersion() => 2;
+
         void OnPreprocessModel()
         {
             if (!IsStickman) return;
@@ -37,6 +40,9 @@ namespace StickmanArena.EditorTools
             var clips = importer.defaultClipAnimations;
             foreach (var clip in clips)
             {
+                // Blender exporta las tomas como "StickmanRig|Idle": nos quedamos con el nombre de la acción
+                int bar = clip.takeName.LastIndexOf('|');
+                clip.name = bar >= 0 ? clip.takeName.Substring(bar + 1) : clip.takeName;
                 bool loop = clip.name == "Idle" || clip.name == "Run";
                 clip.loopTime = loop;
                 clip.loopPose = loop;
