@@ -19,7 +19,7 @@ namespace StickmanArena
         readonly List<Transform> _tiles = new List<Transform>();
         readonly List<float> _dropAt = new List<float>();
         readonly List<Vector3> _rest = new List<Vector3>();
-        float _clock = -1f;
+        float _clock = -1f; // reloj del derrumbe; arranca con el primer StartCollapse
         bool _collapsing;
 
         public float Length => Rows * TileSize;
@@ -52,15 +52,48 @@ namespace StickmanArena
         public void StartCollapse(float duration, float fractionOfLength = 0.5f)
         {
             int rowsToDrop = Mathf.RoundToInt(Rows * fractionOfLength);
+            StartCollapse(duration, 0, rowsToDrop - 1);
+        }
+
+        /// <summary>
+        /// Tira las filas de <paramref name="fromRow"/> a <paramref name="toRow"/> (inclusive) en ese
+        /// orden, repartidas a lo largo de "duration" segundos. Sirve para derrumbar la cola
+        /// (0 → n) o la parte delantera (Rows-1 → m) dejando una isla en medio.
+        /// </summary>
+        public void StartCollapse(float duration, int fromRow, int toRow)
+        {
+            int count = Mathf.Abs(toRow - fromRow) + 1;
+            int step = toRow >= fromRow ? 1 : -1;
             for (int i = 0; i < _tiles.Count; i++)
             {
                 int row = i / Columns;
-                if (row >= rowsToDrop) continue;
-                float t = duration * (row + Random.value * 0.6f) / rowsToDrop;
-                _dropAt[i] = t;
+                int order = (row - fromRow) * step;
+                if (order < 0 || order >= count) continue;
+                if (!_tiles[i].gameObject.activeSelf) continue;
+                _dropAt[i] = _clock + duration * (order + Random.value * 0.6f) / count;
             }
-            _clock = 0f;
+            if (_clock < 0f) _clock = 0f;
             _collapsing = true;
+        }
+
+        /// <summary>Filas que siguen en pie (al menos una baldosa activa y sin caída programada).</summary>
+        public int StandingRows
+        {
+            get
+            {
+                int n = 0;
+                for (int r = 0; r < Rows; r++)
+                {
+                    bool standing = false;
+                    for (int c = 0; c < Columns && !standing; c++)
+                    {
+                        int i = r * Columns + c;
+                        standing = _tiles[i].gameObject.activeSelf && float.IsInfinity(_dropAt[i]);
+                    }
+                    if (standing) n++;
+                }
+                return n;
+            }
         }
 
         void Update()

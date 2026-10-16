@@ -15,6 +15,9 @@ namespace StickmanArena
 
         public StyleData Style = StyleData.Boxeador;
 
+        /// <summary>Dónde reaparece quien cae de la arena; la demo lo mueve a las ruinas flotantes en la última fase.</summary>
+        public static Vector3 RespawnPosition = new Vector3(0f, 3f, 0f);
+
         [Header("Entrada (se puede reemplazar por un controlador de IA)")]
         public Vector2 MoveInput;
         public bool JumpPressed;
@@ -73,7 +76,7 @@ namespace StickmanArena
         public void Respawn()
         {
             _controller.enabled = false;
-            transform.position = new Vector3(0f, 3f, 0f);
+            transform.position = RespawnPosition;
             _verticalSpeed = 0f;
             _controller.enabled = true;
         }

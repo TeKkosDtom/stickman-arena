@@ -1,121 +1,157 @@
 {
+  ".claude/settings.json": {
+    "mtime": 1792120740.1045601,
+    "seen": 1792120742.0263124,
+    "ast_hash": "0c656c2ff45d8fcb3d008c5fc239c1e5",
+    "semantic_hash": ""
+  },
   ".mcp.json": {
     "mtime": 1792117343.2654188,
-    "seen": 1792117576.5492566,
+    "seen": 1792120742.0263247,
     "ast_hash": "7ed0b02b96601afc33f2b74a31b2b17d",
     "semantic_hash": ""
   },
   "Assets/Scripts/Editor/BuildScript.cs": {
-    "mtime": 1792117343.2657592,
-    "seen": 1792117576.549264,
-    "ast_hash": "6bb84d9c75a2b006b7f3bfb58b016627",
+    "mtime": 1792120772.9450638,
+    "seen": 1792120773.655781,
+    "ast_hash": "0eac89810a3c206900878d3ad2f2b4d0",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Editor/StickmanModelImporter.cs": {
+    "mtime": 1792119016.7894416,
+    "seen": 1792120742.0263333,
+    "ast_hash": "317de3ea3dcb6d28fc314c20dd0c716f",
     "semantic_hash": ""
   },
   "Assets/Scripts/Runtime/ArenaPhaseDirector.cs": {
     "mtime": 1792117343.2659776,
-    "seen": 1792117576.549268,
+    "seen": 1792120742.0263367,
     "ast_hash": "899b48493a6cb875e2e031dc47492142",
     "semantic_hash": ""
   },
   "Assets/Scripts/Runtime/CollapsingDeck.cs": {
-    "mtime": 1792117343.266144,
-    "seen": 1792117576.5492706,
-    "ast_hash": "b2811ba011b2c52ae3d97a429cb826f4",
+    "mtime": 1792120772.9450638,
+    "seen": 1792120773.6557941,
+    "ast_hash": "f5dae462753d129edc8754616f42f05f",
     "semantic_hash": ""
   },
   "Assets/Scripts/Runtime/DemoBootstrap.cs": {
-    "mtime": 1792117343.266144,
-    "seen": 1792117576.549273,
-    "ast_hash": "7c8fe3d5e718b260508b7cfad0ac7477",
+    "mtime": 1792120772.9454482,
+    "seen": 1792120773.6557972,
+    "ast_hash": "4f1504225ca051399885dac1845f3d46",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/FallAway.cs": {
+    "mtime": 1792118428.4534564,
+    "seen": 1792120742.026347,
+    "ast_hash": "54845d7875cf058654f1ff88bc297da8",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/FloatingRuins.cs": {
+    "mtime": 1792118440.717456,
+    "seen": 1792120742.0263503,
+    "ast_hash": "4b17c288ace8d48e353fb28a9930af07",
     "semantic_hash": ""
   },
   "Assets/Scripts/Runtime/KeyboardInput.cs": {
     "mtime": 1792117343.266144,
-    "seen": 1792117576.5492754,
+    "seen": 1792120742.0263536,
     "ast_hash": "9f41aeba0f83b818a67fb3ad4ae1243b",
     "semantic_hash": ""
   },
   "Assets/Scripts/Runtime/ProceduralStickman.cs": {
     "mtime": 1792117343.266144,
-    "seen": 1792117576.5492778,
+    "seen": 1792120742.0263567,
     "ast_hash": "def714c28c042efeac4b8f1d7454d14d",
     "semantic_hash": ""
   },
   "Assets/Scripts/Runtime/StickmanMotor.cs": {
-    "mtime": 1792117343.266144,
-    "seen": 1792117576.5492797,
-    "ast_hash": "1cd31e7090f3dc0ab318b5904862f4cc",
+    "mtime": 1792120772.9454482,
+    "seen": 1792120773.6558146,
+    "ast_hash": "993918969aa7f617ca17624f5fa5b73e",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/StickmanView.cs": {
+    "mtime": 1792118423.7094564,
+    "seen": 1792120742.0263624,
+    "ast_hash": "e65042dadfbc20a1e17a00338c8a9f5c",
     "semantic_hash": ""
   },
   "Assets/Scripts/Runtime/StyleData.cs": {
     "mtime": 1792117343.266144,
-    "seen": 1792117576.5492818,
+    "seen": 1792120742.026366,
     "ast_hash": "3efa11baa8c4044d0ddeb6a49b941450",
     "semantic_hash": ""
   },
   "Assets/Scripts/Runtime/TopDownCamera.cs": {
     "mtime": 1792117343.266144,
-    "seen": 1792117576.5492837,
+    "seen": 1792120742.0263693,
     "ast_hash": "183a5ebbb9fed7bf2a2363ca32cb6353",
+    "semantic_hash": ""
+  },
+  "Assets/Tests/EditMode/StickmanModelTests.cs": {
+    "mtime": 1792118509.7334545,
+    "seen": 1792120742.0263722,
+    "ast_hash": "caa36ae6dc680ec649e9d1c1d3fc4b41",
     "semantic_hash": ""
   },
   "Assets/Tests/EditMode/StyleDataTests.cs": {
     "mtime": 1792117343.2673094,
-    "seen": 1792117576.5492857,
+    "seen": 1792120742.0263746,
     "ast_hash": "2304e238a0f4b1e764f833b50a81e3d5",
     "semantic_hash": ""
   },
   "Packages/manifest.json": {
     "mtime": 1792117343.2673094,
-    "seen": 1792117576.5492878,
+    "seen": 1792120742.0263777,
     "ast_hash": "23c54c8ecfb4bc13dae7ca5f6b8e9eff",
     "semantic_hash": ""
   },
   "tools/blender/make_stickman.py": {
     "mtime": 1792118242.9514883,
-    "seen": 1792118273.586037,
+    "seen": 1792120742.026381,
     "ast_hash": "54abb261652178d1889580b0dd009742",
     "semantic_hash": ""
   },
   "tools/ci/test-summary.py": {
-    "mtime": 1792117343.270697,
-    "seen": 1792117576.5492914,
-    "ast_hash": "bff61e388072c37a5f22f86378a103d4",
+    "mtime": 1792120772.9454482,
+    "seen": 1792120773.6558385,
+    "ast_hash": "2b1ba23f18d48c870f6dfd4406073e11",
     "semantic_hash": ""
   },
   ".github/workflows/webgl.yml": {
     "mtime": 1792117343.2654188,
-    "seen": 1792117576.5492928,
+    "seen": 1792120742.0263865,
     "ast_hash": "180a652412265e8fc7cab176a3c8c2e3",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1792117343.2673094,
-    "seen": 1792117576.5492942,
-    "ast_hash": "7840820e399ccd7a18fcf340b7125b39",
+    "mtime": 1792120772.9454482,
+    "seen": 1792120773.6558442,
+    "ast_hash": "45baa05eba4c272d5318cbfe172dde9f",
     "semantic_hash": ""
   },
   "ProjectSettings/ProjectVersion.txt": {
     "mtime": 1792117343.2673094,
-    "seen": 1792117576.549296,
+    "seen": 1792120742.0263932,
     "ast_hash": "eee9747c4a57361c5ed57f369508ae34",
     "semantic_hash": ""
   },
   "README.md": {
     "mtime": 1792117266.5014853,
-    "seen": 1792117576.5492973,
+    "seen": 1792120742.0263958,
     "ast_hash": "d3a31bf63c1304b89c78d22d821fb07c",
     "semantic_hash": ""
   },
   "docs/licencia-unity.md": {
     "mtime": 1792117266.5014853,
-    "seen": 1792117576.5492995,
+    "seen": 1792120742.026399,
     "ast_hash": "c294805c197ce09dbd0e0a195376b35e",
     "semantic_hash": ""
   },
   "docs/previews/stickman-preview.png": {
     "mtime": 1792118248.049461,
-    "seen": 1792118273.586052,
+    "seen": 1792120742.0264025,
     "ast_hash": "d2b70aff43a5b142c15931f0b179e773",
     "semantic_hash": ""
   }

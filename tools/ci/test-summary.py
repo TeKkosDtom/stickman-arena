@@ -2,12 +2,42 @@
 """Lee los XML de NUnit que deja el Test Runner de Unity y escribe solo el resumen y los fallos.
 Uso: python3 tools/ci/test-summary.py <carpeta con *.xml>
 Sale con código 1 si hubo fallos."""
-import glob, sys, xml.etree.ElementTree as ET
+import glob, os, sys, xml.etree.ElementTree as ET
 
 folder = sys.argv[1] if len(sys.argv) > 1 else "TestResults"
 files = glob.glob(f"{folder}/**/*.xml", recursive=True)
+# En GitHub Actions, además del log, se emiten anotaciones (::error::) que se pueden leer
+# por la API de checks sin descargar logs ni artefactos.
+IN_ACTIONS = os.environ.get("GITHUB_ACTIONS") == "true"
+def annotate(level, title, msg):
+    if IN_ACTIONS:
+        print(f"::{level} title={title}::{msg.replace(chr(10), ' ')[:900]}")
+
+def annotate_editor_log():
+    """Si el editor dejó su log en la carpeta, anota las líneas de error más relevantes."""
+    import re
+    pattern = re.compile(r"error CS|Exception|License|licen[cs]e|Fatal|Aborting|Crash|Timeout|Failed to|exit code", re.I)
+    shown = 0
+    for log in glob.glob(f"{folder}/**/*.log", recursive=True):
+        try:
+            lines = open(log, errors="replace").read().splitlines()
+        except OSError:
+            continue
+        print(f"Log del editor: {log} ({len(lines)} líneas)")
+        for line in lines:
+            if pattern.search(line) and shown < 25:
+                shown += 1
+                print(f"  LOG {line[:300]}")
+                annotate("error", "Log de Unity", line[:300])
+        if shown == 0 and lines:
+            tail = " | ".join(l.strip() for l in lines[-5:])
+            annotate("warning", "Fin del log de Unity", tail)
+
 if not files:
-    print(f"Sin resultados en {folder}"); sys.exit(0)
+    print(f"Sin resultados en {folder}")
+    annotate("error", "Sin resultados de pruebas", "Unity no generó XML de resultados: suele ser un error de compilación o de activación (ver anotaciones del log).")
+    annotate_editor_log()
+    sys.exit(0)
 
 total = passed = failed = skipped = 0
 failures = []
@@ -23,7 +53,11 @@ for f in files:
             msg = case.findtext("failure/message", "").strip().splitlines()
             failures.append((case.get("fullname"), msg[0] if msg else ""))
 print(f"Pruebas: {total} total, {passed} ok, {failed} fallidas, {skipped} omitidas")
+annotate("notice" if not failed else "error", "Resumen de pruebas", f"{total} total, {passed} ok, {failed} fallidas, {skipped} omitidas")
 for name, msg in failures[:20]:
     print(f"  FALLÓ {name}: {msg[:300]}")
+    annotate("error", "Prueba fallida", f"{name}: {msg[:300]}")
+if failed:
+    annotate_editor_log()
 if len(failures) > 20: print(f"  ... y {len(failures) - 20} más (ver el artefacto resultados-pruebas)")
 sys.exit(1 if failed else 0)
