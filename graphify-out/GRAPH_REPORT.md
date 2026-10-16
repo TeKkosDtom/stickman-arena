@@ -1,17 +1,17 @@
 # Graph Report - stickman-arena  (2026-10-16)
 
 ## Corpus Check
-- 18 files · ~7,324 words
+- 17 files · ~20,431 words
 - Verdict: corpus is large enough that graph structure adds value.
-- Unclassified: 5 file(s) not represented in the graph (top: .asmdef 3, (none) 2)
+- Unclassified: 6 file(s) not represented in the graph (top: .asmdef 3, (none) 2, .fbx 1)
 
 ## Summary
-- 182 nodes · 279 edges · 14 communities (10 shown, 4 thin omitted)
-- Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 14 edges (avg confidence: 0.94)
+- 175 nodes · 272 edges · 13 communities (9 shown, 4 thin omitted)
+- Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 13 edges (avg confidence: 0.93)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `90e21f65`
+- Built from commit: `dccb26b0`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -28,7 +28,6 @@
 - StickMan Arena
 - StyleDataTests.cs
 - context7
-- Generador del Stickman (Blender / bpy)
 
 ## God Nodes (most connected - your core abstractions)
 1. `StickmanMotor` - 19 edges
@@ -57,14 +56,14 @@
 ## Import Cycles
 - None detected.
 
-## Communities (14 total, 4 thin omitted)
+## Communities (13 total, 4 thin omitted)
 
 ### Community 0 - "make_stickman.py"
-Cohesion: 0.12
-Nodes (17): add_ball(), add_capsule(), build_actions(), build_armature(), build_mesh(), clear_scene(), export(), join_objects() (+9 more)
+Cohesion: 0.13
+Nodes (16): add_ball(), add_capsule(), build_actions(), build_armature(), build_mesh(), clear_scene(), export(), join_objects() (+8 more)
 
 ### Community 1 - "CollapsingDeck"
-Cohesion: 0.15
+Cohesion: 0.16
 Nodes (4): CollapsingDeck, Length, ProceduralStickman, TopDownCamera
 
 ### Community 2 - "manifest.json"
@@ -80,7 +79,7 @@ Cohesion: 0.27
 Nodes (6): ArenaPhaseDirector, CurrentPhaseIndex, CurrentPhaseName, MatchTime, WarningActive, Phase
 
 ### Community 7 - "DemoBootstrap"
-Cohesion: 0.28
+Cohesion: 0.24
 Nodes (6): DemoBootstrap, Flujo, Herramientas, Mapa del código, Reglas duras, StickMan Arena: guía para Claude Code
 
 ### Community 8 - "StyleData"
@@ -95,29 +94,25 @@ Nodes (6): Activar la licencia Personal de Unity para GitHub Actions, Cómo func
 Cohesion: 0.50
 Nodes (3): npx, context7, @upstash/context7-mcp
 
-### Community 13 - "Generador del Stickman (Blender / bpy)"
-Cohesion: 0.33
-Nodes (5): Generador del Stickman (Blender / bpy), Importar en Unity, Qué produce, Requisitos, Uso
-
 ## Knowledge Gaps
 - **28 isolated node(s):** `npx`, `@upstash/context7-mcp`, `MatchTime`, `CurrentPhaseIndex`, `WarningActive` (+23 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 86 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 81 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `StickMan Arena: guía para Claude Code` connect `DemoBootstrap` to `StickMan Arena`?**
-  _High betweenness centrality (0.318) - this node is a cross-community bridge._
+  _High betweenness centrality (0.296) - this node is a cross-community bridge._
 - **Are the 2 inferred relationships involving `DemoBootstrap` (e.g. with `Mapa del código` and `Reglas duras`) actually correct?**
   _`DemoBootstrap` has 2 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `npx`, `@upstash/context7-mcp`, `MatchTime` to the rest of the system?**
   _28 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `make_stickman.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.1225071225071225 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.12923076923076923 - nodes in this community are weakly interconnected._
 - **Why does `Mapa del código` connect `DemoBootstrap` to `StyleData`, `CollapsingDeck`, `StickmanMotor`, `ArenaPhaseDirector`?**
-  _High betweenness centrality (0.284) - this node is a cross-community bridge._
-- **Should `CollapsingDeck` be split into smaller, more focused modules?**
-  _Cohesion score 0.1476923076923077 - nodes in this community are weakly interconnected._
+  _High betweenness centrality (0.270) - this node is a cross-community bridge._
+- **Should `manifest.json` be split into smaller, more focused modules?**
+  _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._
 - **Why does `main()` connect `make_stickman.py` to `StickMan Arena`, `DemoBootstrap`?**
-  _High betweenness centrality (0.283) - this node is a cross-community bridge._
+  _High betweenness centrality (0.251) - this node is a cross-community bridge._

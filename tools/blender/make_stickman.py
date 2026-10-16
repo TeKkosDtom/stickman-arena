@@ -438,10 +438,20 @@ def render_preview(target):
     scene.render.filepath = target
     scene.render.film_transparent = False
 
-    for engine in ('BLENDER_WORKBENCH', 'BLENDER_EEVEE_NEXT', 'BLENDER_EEVEE'):
+    # Sin pantalla ni GPU (contenedor en la nube) solo Cycles en CPU funciona: Workbench y EEVEE
+    # necesitan EGL y abortan el proceso entero (no es una excepcion capturable).
+    # Con STICKMAN_PREVIEW_GPU=1 se prueban tambien los motores que usan GPU.
+    engines = ['CYCLES']
+    if os.environ.get("STICKMAN_PREVIEW_GPU") == "1":
+        engines += ['BLENDER_WORKBENCH', 'BLENDER_EEVEE_NEXT', 'BLENDER_EEVEE']
+    for engine in engines:
         try:
             scene.render.engine = engine
-            if engine == 'BLENDER_WORKBENCH':
+            if engine == 'CYCLES':
+                scene.cycles.device = 'CPU'
+                scene.cycles.samples = 32
+                scene.cycles.use_denoising = False
+            elif engine == 'BLENDER_WORKBENCH':
                 sh = scene.display.shading
                 sh.light = 'STUDIO'
                 sh.color_type = 'MATERIAL'
@@ -481,12 +491,6 @@ def main():
 
     out_path, fmt = export(mesh_obj, arm_obj, with_anim=bool(actions))
 
-    try:
-        engine = render_preview(OUT_PREVIEW)
-    except Exception as e:
-        print(f"[preview] render fallo: {e}")
-        engine = None
-
     dims = mesh_obj.dimensions
     print("\n================ RESUMEN STICKMAN ================")
     print(f"Blender bpy       : {bpy.app.version_string}")
@@ -499,11 +503,20 @@ def main():
     else:
         print(f"Acciones          : ninguna ({anim_err})")
     print(f"Modelo ({fmt})      : {out_path}  ({os.path.getsize(out_path)/1024:.1f} KB)")
+    print("==================================================", flush=True)
+
+    if os.environ.get("STICKMAN_SKIP_PREVIEW") == "1":
+        print("Preview           : omitido (STICKMAN_SKIP_PREVIEW=1)")
+        return
+    try:
+        engine = render_preview(OUT_PREVIEW)
+    except Exception as e:
+        print(f"[preview] render fallo: {e}")
+        engine = None
     if engine and os.path.exists(OUT_PREVIEW):
         print(f"Preview ({engine}): {OUT_PREVIEW}  ({os.path.getsize(OUT_PREVIEW)/1024:.1f} KB)")
     else:
         print("Preview           : NO generado (render headless fallo)")
-    print("==================================================")
 
 
 if __name__ == "__main__":
