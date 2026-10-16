@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh api -X PUT repos/TeKkosDtom/stickman-arena/pulls/:*)",
+      "Bash(gh api -X POST repos/TeKkosDtom/stickman-arena/pulls/:*)",
+      "Bash(gh api -X POST repos/TeKkosDtom/stickman-arena/actions/runs/:*)",
+      "Bash(gh api -X POST repos/TeKkosDtom/stickman-arena/issues/:*)"
+    ]
+  }
+}
