@@ -5,11 +5,12 @@
   "3": "BuildScript.cs",
   "4": "StickmanMotor",
   "5": "StickmanArena",
-  "6": "ArenaPhaseDirector",
-  "7": "DemoBootstrap",
+  "6": "DemoBootstrap",
+  "7": "StickmanView",
   "8": "StyleData",
-  "9": "StickMan Arena",
-  "10": "StyleDataTests.cs",
+  "9": "Mapa del código",
+  "10": "StickmanModelTests.cs",
   "11": "test-summary.py",
-  "12": "context7"
+  "12": "context7",
+  "13": "BuildScript"
 }

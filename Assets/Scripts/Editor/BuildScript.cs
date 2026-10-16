@@ -90,9 +90,14 @@ namespace StickmanArena.EditorTools
             QualitySettings.renderPipeline = asset;
         }
 
+        const string StickmanModelPath = "Assets/Models/Stickman/stickman.fbx";
+
+        /// <summary>
+        /// La escena no se versiona: se regenera en cada build para que siempre lleve las
+        /// referencias actuales (shader plano, modelo de Blender y sus clips).
+        /// </summary>
         static void EnsureDemoScene()
         {
-            if (File.Exists(ScenePath)) return;
             Directory.CreateDirectory("Assets/Scenes");
             var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
             var boot = new GameObject("Demo");
@@ -100,6 +105,26 @@ namespace StickmanArena.EditorTools
             // Shader.Find no encuentra shaders que no estén referenciados en el build; al guardarlo
             // en la escena, el shader entra en el WebGL sin tocar "Always Included Shaders".
             demo.FlatShader = Shader.Find(FlatShaderName) ?? Shader.Find("Unlit/Color");
+
+            // Modelo de Blender y sus clips: referenciados desde la escena para que entren en el build
+            demo.StickmanPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(StickmanModelPath);
+            if (demo.StickmanPrefab != null)
+            {
+                foreach (var obj in AssetDatabase.LoadAllAssetRepresentationsAtPath(StickmanModelPath))
+                {
+                    if (!(obj is AnimationClip clip)) continue;
+                    switch (clip.name)
+                    {
+                        case "Idle": demo.IdleClip = clip; break;
+                        case "Run": demo.RunClip = clip; break;
+                        case "Punch": demo.PunchClip = clip; break;
+                        case "Jump": demo.JumpClip = clip; break;
+                    }
+                }
+                Debug.Log($"Demo: modelo de Blender {(demo.IdleClip && demo.RunClip && demo.PunchClip && demo.JumpClip ? "con 4 clips" : "SIN todos los clips (se usará el stickman procedural)")}");
+            }
+            else Debug.LogWarning($"Demo: no se encontró {StickmanModelPath}; se usará el stickman procedural");
+
             EditorSceneManager.SaveScene(scene, ScenePath);
             EditorBuildSettings.scenes = new[] { new EditorBuildSettingsScene(ScenePath, true) };
         }

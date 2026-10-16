@@ -6,9 +6,9 @@
     "semantic_hash": ""
   },
   "Assets/Scripts/Editor/BuildScript.cs": {
-    "mtime": 1792117343.2657592,
-    "seen": 1792117576.549264,
-    "ast_hash": "6bb84d9c75a2b006b7f3bfb58b016627",
+    "mtime": 1792118549.9832897,
+    "seen": 1792118550.838165,
+    "ast_hash": "0eac89810a3c206900878d3ad2f2b4d0",
     "semantic_hash": ""
   },
   "Assets/Scripts/Runtime/ArenaPhaseDirector.cs": {
@@ -18,15 +18,15 @@
     "semantic_hash": ""
   },
   "Assets/Scripts/Runtime/CollapsingDeck.cs": {
-    "mtime": 1792117343.266144,
-    "seen": 1792117576.5492706,
-    "ast_hash": "b2811ba011b2c52ae3d97a429cb826f4",
+    "mtime": 1792118461.442361,
+    "seen": 1792118550.8381765,
+    "ast_hash": "f5dae462753d129edc8754616f42f05f",
     "semantic_hash": ""
   },
   "Assets/Scripts/Runtime/DemoBootstrap.cs": {
-    "mtime": 1792117343.266144,
-    "seen": 1792117576.549273,
-    "ast_hash": "7c8fe3d5e718b260508b7cfad0ac7477",
+    "mtime": 1792118497.0054548,
+    "seen": 1792118550.8381789,
+    "ast_hash": "4f1504225ca051399885dac1845f3d46",
     "semantic_hash": ""
   },
   "Assets/Scripts/Runtime/KeyboardInput.cs": {
@@ -42,9 +42,9 @@
     "semantic_hash": ""
   },
   "Assets/Scripts/Runtime/StickmanMotor.cs": {
-    "mtime": 1792117343.266144,
-    "seen": 1792117576.5492797,
-    "ast_hash": "1cd31e7090f3dc0ab318b5904862f4cc",
+    "mtime": 1792118461.4428487,
+    "seen": 1792118550.8381913,
+    "ast_hash": "993918969aa7f617ca17624f5fa5b73e",
     "semantic_hash": ""
   },
   "Assets/Scripts/Runtime/StyleData.cs": {
@@ -90,9 +90,9 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1792117343.2673094,
-    "seen": 1792117576.5492942,
-    "ast_hash": "7840820e399ccd7a18fcf340b7125b39",
+    "mtime": 1792118549.984064,
+    "seen": 1792118550.8382096,
+    "ast_hash": "bd72cdf52a9af04b6f6d9929ba6e541c",
     "semantic_hash": ""
   },
   "ProjectSettings/ProjectVersion.txt": {
@@ -117,6 +117,36 @@
     "mtime": 1792118248.049461,
     "seen": 1792118273.586052,
     "ast_hash": "d2b70aff43a5b142c15931f0b179e773",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Editor/StickmanModelImporter.cs": {
+    "mtime": 1792118394.453457,
+    "seen": 1792118550.8381693,
+    "ast_hash": "05d7ff8ecdfac240129bb11d49ca05f6",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/FallAway.cs": {
+    "mtime": 1792118428.4534564,
+    "seen": 1792118550.8381808,
+    "ast_hash": "54845d7875cf058654f1ff88bc297da8",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/FloatingRuins.cs": {
+    "mtime": 1792118440.717456,
+    "seen": 1792118550.8381839,
+    "ast_hash": "4b17c288ace8d48e353fb28a9930af07",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/StickmanView.cs": {
+    "mtime": 1792118423.7094564,
+    "seen": 1792118550.838193,
+    "ast_hash": "e65042dadfbc20a1e17a00338c8a9f5c",
+    "semantic_hash": ""
+  },
+  "Assets/Tests/EditMode/StickmanModelTests.cs": {
+    "mtime": 1792118509.7334545,
+    "seen": 1792118550.8381984,
+    "ast_hash": "caa36ae6dc680ec649e9d1c1d3fc4b41",
     "semantic_hash": ""
   }
 }
