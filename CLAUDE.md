@@ -7,6 +7,7 @@ El dueño es Edwin (escribe en español; responderle siempre en español). Commi
 - **Ligero siempre**: Low Poly, colores planos, sin sombras en tiempo real, sin post-procesado. Stickman < 1.000 triángulos, arena < 50.000 triángulos por fase, 60 fps en gráfica integrada. Toda decisión de código y assets se mide con esto.
 - **Balance**: cada estilo suma 12 puntos (velocidad, daño, alcance, peso, de 1 a 5). El salto es igual para todos. Hay una prueba que lo verifica.
 - **Nombres propios**: nunca usar nombres ni diseños de Capcom. Los estilos tienen nombres propios (Puños de Roca, Aura Dorada, Boxeador, Pistolero...).
+- **Plataformas**: solo navegador (WebGL) y escritorio (Windows/Linux). Nunca móvil: sin controles táctiles ni builds Android/iOS.
 - **No hay editor abierto**: el proyecto se trabaja como código. La escena de la demo se construye por script (`DemoBootstrap`) y el build lo hace `BuildScript.BuildWebGL` en GitHub Actions. No agregar assets que requieran tocar el Inspector.
 
 ## Flujo
