@@ -13,9 +13,30 @@ def annotate(level, title, msg):
     if IN_ACTIONS:
         print(f"::{level} title={title}::{msg.replace(chr(10), ' ')[:900]}")
 
+def annotate_editor_log():
+    """Si el editor dejó su log en la carpeta, anota las líneas de error más relevantes."""
+    import re
+    pattern = re.compile(r"error CS|Exception|License|licen[cs]e|Fatal|Aborting|Crash|Timeout|Failed to|exit code", re.I)
+    shown = 0
+    for log in glob.glob(f"{folder}/**/*.log", recursive=True):
+        try:
+            lines = open(log, errors="replace").read().splitlines()
+        except OSError:
+            continue
+        print(f"Log del editor: {log} ({len(lines)} líneas)")
+        for line in lines:
+            if pattern.search(line) and shown < 25:
+                shown += 1
+                print(f"  LOG {line[:300]}")
+                annotate("error", "Log de Unity", line[:300])
+        if shown == 0 and lines:
+            tail = " | ".join(l.strip() for l in lines[-5:])
+            annotate("warning", "Fin del log de Unity", tail)
+
 if not files:
     print(f"Sin resultados en {folder}")
-    annotate("error", "Sin resultados de pruebas", "Unity no generó XML de resultados: suele ser un error de compilación (buscar 'error CS' en el log del paso anterior).")
+    annotate("error", "Sin resultados de pruebas", "Unity no generó XML de resultados: suele ser un error de compilación o de activación (ver anotaciones del log).")
+    annotate_editor_log()
     sys.exit(0)
 
 total = passed = failed = skipped = 0
@@ -36,5 +57,7 @@ annotate("notice" if not failed else "error", "Resumen de pruebas", f"{total} to
 for name, msg in failures[:20]:
     print(f"  FALLÓ {name}: {msg[:300]}")
     annotate("error", "Prueba fallida", f"{name}: {msg[:300]}")
+if failed:
+    annotate_editor_log()
 if len(failures) > 20: print(f"  ... y {len(failures) - 20} más (ver el artefacto resultados-pruebas)")
 sys.exit(1 if failed else 0)
