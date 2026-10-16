@@ -72,9 +72,9 @@
     "semantic_hash": ""
   },
   "tools/blender/make_stickman.py": {
-    "mtime": 1792117540.8870728,
-    "seen": 1792117576.5492897,
-    "ast_hash": "58ea572dd92707a25382f81d56bdfa82",
+    "mtime": 1792118242.9514883,
+    "seen": 1792118273.586037,
+    "ast_hash": "54abb261652178d1889580b0dd009742",
     "semantic_hash": ""
   },
   "tools/ci/test-summary.py": {
@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "docs/previews/stickman-preview.png": {
-    "mtime": 1792117543.7334785,
-    "seen": 1792117576.549302,
-    "ast_hash": "9e699566ab2ae829a3e688c82b2ec11f",
+    "mtime": 1792118248.049461,
+    "seen": 1792118273.586052,
+    "ast_hash": "d2b70aff43a5b142c15931f0b179e773",
     "semantic_hash": ""
   }
 }
