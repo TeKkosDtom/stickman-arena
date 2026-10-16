@@ -1,0 +1,6 @@
+{
+  "name": "StickmanArena.Runtime",
+  "rootNamespace": "StickmanArena",
+  "references": [],
+  "autoReferenced": true
+}

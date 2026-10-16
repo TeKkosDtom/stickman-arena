@@ -1,0 +1,7 @@
+{
+  "name": "StickmanArena.Editor",
+  "rootNamespace": "StickmanArena.EditorTools",
+  "references": [ "StickmanArena.Runtime", "Unity.RenderPipelines.Universal.Runtime" ],
+  "includePlatforms": [ "Editor" ],
+  "autoReferenced": true
+}
