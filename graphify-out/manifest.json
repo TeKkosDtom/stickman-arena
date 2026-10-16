@@ -1,0 +1,122 @@
+{
+  ".mcp.json": {
+    "mtime": 1792117343.2654188,
+    "seen": 1792117576.5492566,
+    "ast_hash": "7ed0b02b96601afc33f2b74a31b2b17d",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Editor/BuildScript.cs": {
+    "mtime": 1792117343.2657592,
+    "seen": 1792117576.549264,
+    "ast_hash": "6bb84d9c75a2b006b7f3bfb58b016627",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/ArenaPhaseDirector.cs": {
+    "mtime": 1792117343.2659776,
+    "seen": 1792117576.549268,
+    "ast_hash": "899b48493a6cb875e2e031dc47492142",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/CollapsingDeck.cs": {
+    "mtime": 1792117343.266144,
+    "seen": 1792117576.5492706,
+    "ast_hash": "b2811ba011b2c52ae3d97a429cb826f4",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/DemoBootstrap.cs": {
+    "mtime": 1792117343.266144,
+    "seen": 1792117576.549273,
+    "ast_hash": "7c8fe3d5e718b260508b7cfad0ac7477",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/KeyboardInput.cs": {
+    "mtime": 1792117343.266144,
+    "seen": 1792117576.5492754,
+    "ast_hash": "9f41aeba0f83b818a67fb3ad4ae1243b",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/ProceduralStickman.cs": {
+    "mtime": 1792117343.266144,
+    "seen": 1792117576.5492778,
+    "ast_hash": "def714c28c042efeac4b8f1d7454d14d",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/StickmanMotor.cs": {
+    "mtime": 1792117343.266144,
+    "seen": 1792117576.5492797,
+    "ast_hash": "1cd31e7090f3dc0ab318b5904862f4cc",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/StyleData.cs": {
+    "mtime": 1792117343.266144,
+    "seen": 1792117576.5492818,
+    "ast_hash": "3efa11baa8c4044d0ddeb6a49b941450",
+    "semantic_hash": ""
+  },
+  "Assets/Scripts/Runtime/TopDownCamera.cs": {
+    "mtime": 1792117343.266144,
+    "seen": 1792117576.5492837,
+    "ast_hash": "183a5ebbb9fed7bf2a2363ca32cb6353",
+    "semantic_hash": ""
+  },
+  "Assets/Tests/EditMode/StyleDataTests.cs": {
+    "mtime": 1792117343.2673094,
+    "seen": 1792117576.5492857,
+    "ast_hash": "2304e238a0f4b1e764f833b50a81e3d5",
+    "semantic_hash": ""
+  },
+  "Packages/manifest.json": {
+    "mtime": 1792117343.2673094,
+    "seen": 1792117576.5492878,
+    "ast_hash": "23c54c8ecfb4bc13dae7ca5f6b8e9eff",
+    "semantic_hash": ""
+  },
+  "tools/blender/make_stickman.py": {
+    "mtime": 1792118242.9514883,
+    "seen": 1792118273.586037,
+    "ast_hash": "54abb261652178d1889580b0dd009742",
+    "semantic_hash": ""
+  },
+  "tools/ci/test-summary.py": {
+    "mtime": 1792117343.270697,
+    "seen": 1792117576.5492914,
+    "ast_hash": "bff61e388072c37a5f22f86378a103d4",
+    "semantic_hash": ""
+  },
+  ".github/workflows/webgl.yml": {
+    "mtime": 1792117343.2654188,
+    "seen": 1792117576.5492928,
+    "ast_hash": "180a652412265e8fc7cab176a3c8c2e3",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1792117343.2673094,
+    "seen": 1792117576.5492942,
+    "ast_hash": "7840820e399ccd7a18fcf340b7125b39",
+    "semantic_hash": ""
+  },
+  "ProjectSettings/ProjectVersion.txt": {
+    "mtime": 1792117343.2673094,
+    "seen": 1792117576.549296,
+    "ast_hash": "eee9747c4a57361c5ed57f369508ae34",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1792117266.5014853,
+    "seen": 1792117576.5492973,
+    "ast_hash": "d3a31bf63c1304b89c78d22d821fb07c",
+    "semantic_hash": ""
+  },
+  "docs/licencia-unity.md": {
+    "mtime": 1792117266.5014853,
+    "seen": 1792117576.5492995,
+    "ast_hash": "c294805c197ce09dbd0e0a195376b35e",
+    "semantic_hash": ""
+  },
+  "docs/previews/stickman-preview.png": {
+    "mtime": 1792118248.049461,
+    "seen": 1792118273.586052,
+    "ast_hash": "d2b70aff43a5b142c15931f0b179e773",
+    "semantic_hash": ""
+  }
+}

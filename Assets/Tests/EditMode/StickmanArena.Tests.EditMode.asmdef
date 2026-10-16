@@ -1,0 +1,13 @@
+{
+  "name": "StickmanArena.Tests.EditMode",
+  "rootNamespace": "StickmanArena.Tests",
+  "references": [ "StickmanArena.Runtime", "UnityEngine.TestRunner", "UnityEditor.TestRunner" ],
+  "includePlatforms": [ "Editor" ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": true,
+  "precompiledReferences": [ "nunit.framework.dll" ],
+  "autoReferenced": false,
+  "defineConstraints": [ "UNITY_INCLUDE_TESTS" ],
+  "noEngineReferences": false
+}
