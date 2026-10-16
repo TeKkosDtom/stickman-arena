@@ -17,7 +17,7 @@ El dueño es Edwin (escribe en español; responderle siempre en español). Commi
 
 ## Herramientas
 - **Context7** (docs actualizadas): configurado en `.mcp.json`. Antes de escribir código con una API de Unity/URP que no sea básica, consultar Context7 (`resolve-library-id` → `get-library-docs`).
-- **Graphify** (mapa del código): cuando el repo crezca, consultar el grafo en vez de releer archivos. Instalación en Claude Code: `/plugin marketplace add safishamsi/graphify` y `/plugin install graphify`, luego `/graphify` en la raíz. (Verificar el comando exacto en el README del plugin si cambia.)
+- **Graphify** (mapa del código, ya instalado): el grafo vive en `graphify-out/` (graph.json y GRAPH_REPORT.md versionados) y la skill en `.claude/skills/graphify`. Antes de releer archivos para entender el código, usar `graphify explain "Clase"`, `graphify path "A" "B"` o leer `graphify-out/GRAPH_REPORT.md`. Tras cambiar código: `graphify update .` (sin LLM, gratis). Si falta el CLI: `pip install graphifyy` (sí, con doble y). Un hook de git lo actualiza al hacer checkout o merge; para instalarlo en un clon nuevo: `graphify hook install`.
 
 ## Mapa del código
 - `Assets/Scripts/Runtime/` lógica del juego (asmdef `StickmanArena.Runtime`).

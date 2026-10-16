@@ -26,3 +26,6 @@
 __pycache__/
 # Reportes de pruebas (solo se guarda el resumen)
 /TestResults/
+
+# Graphify: la caché es local; el grafo y el reporte sí se versionan
+graphify-out/cache/
