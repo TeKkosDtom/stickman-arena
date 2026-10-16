@@ -17,6 +17,7 @@ concurrency:
 
 permissions:
   contents: read
+  checks: write   # unity-test-runner publica el resultado como check (githubToken)
   pages: write
   id-token: write
 

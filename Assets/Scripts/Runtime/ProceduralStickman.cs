@@ -73,7 +73,9 @@ namespace StickmanArena
             var joint = new GameObject("Joint").transform;
             joint.SetParent(parent, false);
             joint.localPosition = pivot;
-            Part(PrimitiveType.Cylinder, joint, new Vector3(0f, -length * 0.5f, 0f), new Vector3(thickness * 2f, length * 0.5f, thickness * 2f), parent.GetComponentInChildren<Renderer>().sharedMaterial);
+            // El tronco ya cuelga de "parent", así que hereda su tinta; si no hubiera ningún renderer, queda sin material en vez de fallar
+            var reference = parent.GetComponentInChildren<Renderer>();
+            Part(PrimitiveType.Cylinder, joint, new Vector3(0f, -length * 0.5f, 0f), new Vector3(thickness * 2f, length * 0.5f, thickness * 2f), reference != null ? reference.sharedMaterial : null);
             return joint;
         }
 

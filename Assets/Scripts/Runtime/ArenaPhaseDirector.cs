@@ -37,7 +37,7 @@ namespace StickmanArena
             if (next >= Phases.Count) { WarningActive = false; return; }
 
             var p = Phases[next];
-            if (!WarningActive && _warnedIndex != next && MatchTime >= p.StartTime - p.WarningLead)
+            if (!WarningActive && _warnedIndex != next && p.WarningLead > 0f && MatchTime >= p.StartTime - p.WarningLead)
             {
                 WarningActive = true;
                 _warnedIndex = next;

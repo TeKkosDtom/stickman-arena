@@ -18,6 +18,8 @@ namespace StickmanArena.EditorTools
     {
         const string ScenePath = "Assets/Scenes/Demo.unity";
         const string UrpAssetPath = "Assets/Settings/URP-LowPoly.asset";
+        const string UrpRendererPath = "Assets/Settings/URP-LowPoly-Renderer.asset";
+        const string FlatShaderName = "Universal Render Pipeline/Unlit";
 
         [MenuItem("StickMan Arena/Preparar proyecto (URP + escena demo)")]
         public static void Prepare()
@@ -41,7 +43,7 @@ namespace StickmanArena.EditorTools
             PlayerSettings.WebGL.decompressionFallback = true;
             PlayerSettings.WebGL.dataCaching = true;
             PlayerSettings.WebGL.exceptionSupport = WebGLExceptionSupport.None;
-            PlayerSettings.WebGL.memorySize = 256;
+            PlayerSettings.WebGL.initialMemorySize = 256; // MB (memorySize está obsoleto en Unity 6)
             PlayerSettings.SetManagedStrippingLevel(NamedBuildTarget.WebGL, ManagedStrippingLevel.High);
             PlayerSettings.SetIl2CppCompilerConfiguration(NamedBuildTarget.WebGL, Il2CppCompilerConfiguration.Release);
             PlayerSettings.SetIl2CppCodeGeneration(NamedBuildTarget.WebGL, UnityEditor.Build.Il2CppCodeGeneration.OptimizeSize);
@@ -65,7 +67,15 @@ namespace StickmanArena.EditorTools
             var asset = AssetDatabase.LoadAssetAtPath<UniversalRenderPipelineAsset>(UrpAssetPath);
             if (asset == null)
             {
-                asset = UniversalRenderPipelineAsset.Create();
+                // El renderer tiene que ser un asset propio: si queda como objeto suelto en memoria,
+                // la referencia se pierde al guardar y el build arranca sin renderer (no dibuja nada).
+                var renderer = AssetDatabase.LoadAssetAtPath<UniversalRendererData>(UrpRendererPath);
+                if (renderer == null)
+                {
+                    renderer = ScriptableObject.CreateInstance<UniversalRendererData>();
+                    AssetDatabase.CreateAsset(renderer, UrpRendererPath);
+                }
+                asset = UniversalRenderPipelineAsset.Create(renderer);
                 AssetDatabase.CreateAsset(asset, UrpAssetPath);
             }
             // Perfil de bajo consumo: sin sombras en tiempo real, sin HDR, sin post-procesado
@@ -86,7 +96,10 @@ namespace StickmanArena.EditorTools
             Directory.CreateDirectory("Assets/Scenes");
             var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
             var boot = new GameObject("Demo");
-            boot.AddComponent<DemoBootstrap>();
+            var demo = boot.AddComponent<DemoBootstrap>();
+            // Shader.Find no encuentra shaders que no estén referenciados en el build; al guardarlo
+            // en la escena, el shader entra en el WebGL sin tocar "Always Included Shaders".
+            demo.FlatShader = Shader.Find(FlatShaderName) ?? Shader.Find("Unlit/Color");
             EditorSceneManager.SaveScene(scene, ScenePath);
             EditorBuildSettings.scenes = new[] { new EditorBuildSettingsScene(ScenePath, true) };
         }

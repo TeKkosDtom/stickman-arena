@@ -10,6 +10,10 @@ namespace StickmanArena
     /// </summary>
     public class DemoBootstrap : MonoBehaviour
     {
+        /// <summary>Shader plano para todos los materiales. Lo asigna BuildScript al crear la escena
+        /// para que entre en el build; si falta, se busca por nombre (solo funciona en el editor).</summary>
+        public Shader FlatShader;
+
         ArenaPhaseDirector _director;
         CollapsingDeck _deck;
         TopDownCamera _camera;
@@ -21,7 +25,7 @@ namespace StickmanArena
             Application.targetFrameRate = 60;
             QualitySettings.shadows = ShadowQuality.Disable;
 
-            var shader = Shader.Find("Universal Render Pipeline/Unlit") ?? Shader.Find("Unlit/Color");
+            var shader = FlatShader != null ? FlatShader : (Shader.Find("Universal Render Pipeline/Unlit") ?? Shader.Find("Unlit/Color"));
             Material Flat(Color c) => new Material(shader) { color = c };
             var ink = Flat(new Color(0.05f, 0.05f, 0.06f));
             var eye = Flat(Color.white);
@@ -80,6 +84,7 @@ namespace StickmanArena
 
         void OnGUI()
         {
+            if (_director == null) return;
             // HUD mínimo con OnGUI: cero assets extra. Se reemplaza por UI Toolkit en el prototipo.
             var style = new GUIStyle(GUI.skin.label) { fontSize = 20, alignment = TextAnchor.UpperLeft };
             style.normal.textColor = Color.black;
