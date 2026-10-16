@@ -12,9 +12,9 @@
     "semantic_hash": ""
   },
   "Assets/Scripts/Editor/BuildScript.cs": {
-    "mtime": 1792120740.1045601,
-    "seen": 1792120742.0263298,
-    "ast_hash": "7255d84b859d4a8e6a945f89fe69cfbf",
+    "mtime": 1792120772.9450638,
+    "seen": 1792120773.655781,
+    "ast_hash": "0eac89810a3c206900878d3ad2f2b4d0",
     "semantic_hash": ""
   },
   "Assets/Scripts/Editor/StickmanModelImporter.cs": {
@@ -30,15 +30,15 @@
     "semantic_hash": ""
   },
   "Assets/Scripts/Runtime/CollapsingDeck.cs": {
-    "mtime": 1792120740.1045601,
-    "seen": 1792120742.02634,
-    "ast_hash": "9a31afd2c5d71a21602e7a69b31f7975",
+    "mtime": 1792120772.9450638,
+    "seen": 1792120773.6557941,
+    "ast_hash": "f5dae462753d129edc8754616f42f05f",
     "semantic_hash": ""
   },
   "Assets/Scripts/Runtime/DemoBootstrap.cs": {
-    "mtime": 1792120740.1045601,
-    "seen": 1792120742.0263438,
-    "ast_hash": "1c15472d25e6bd3e6fc28f500fa76857",
+    "mtime": 1792120772.9454482,
+    "seen": 1792120773.6557972,
+    "ast_hash": "4f1504225ca051399885dac1845f3d46",
     "semantic_hash": ""
   },
   "Assets/Scripts/Runtime/FallAway.cs": {
@@ -66,9 +66,9 @@
     "semantic_hash": ""
   },
   "Assets/Scripts/Runtime/StickmanMotor.cs": {
-    "mtime": 1792120740.1045601,
-    "seen": 1792120742.02636,
-    "ast_hash": "3bd6ee54e6d636e07ae76f25739649ca",
+    "mtime": 1792120772.9454482,
+    "seen": 1792120773.6558146,
+    "ast_hash": "993918969aa7f617ca17624f5fa5b73e",
     "semantic_hash": ""
   },
   "Assets/Scripts/Runtime/StickmanView.cs": {
@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "tools/ci/test-summary.py": {
-    "mtime": 1792120740.1122234,
-    "seen": 1792120742.0263836,
-    "ast_hash": "c8a4c032d49aa9b739931fb496c4bc92",
+    "mtime": 1792120772.9454482,
+    "seen": 1792120773.6558385,
+    "ast_hash": "2b1ba23f18d48c870f6dfd4406073e11",
     "semantic_hash": ""
   },
   ".github/workflows/webgl.yml": {
@@ -126,9 +126,9 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1792120740.1045601,
-    "seen": 1792120742.0263894,
-    "ast_hash": "765dc44ae158e53b114003fdfb3cd158",
+    "mtime": 1792120772.9454482,
+    "seen": 1792120773.6558442,
+    "ast_hash": "45baa05eba4c272d5318cbfe172dde9f",
     "semantic_hash": ""
   },
   "ProjectSettings/ProjectVersion.txt": {
